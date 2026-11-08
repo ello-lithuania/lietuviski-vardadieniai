@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Jei naudojate šiuos duomenis, nurodykite šaltinį."
+title: "Lietuvos vardadienių kalendorius (JSON / CSV)"
+type: dataset
+abstract: "Lietuviškų vardadienių duomenys visoms 366 metų dienoms (JSON, CSV ir atvirkštinis indeksas pagal vardą). Pagrindinis šaltinis – lietuviškoji Vikipedija, sutikrinta su day.lt ir tv3.lt."
+authors:
+  - name: "dovanasuvardu.lt"
+    website: "https://dovanasuvardu.lt/"
+repository-code: "https://github.com/ello-lithuania/lietuviski-vardadieniai"
+url: "https://dovanasuvardu.lt/vardadieniai/"
+license: CC-BY-SA-4.0
+date-released: 2026-10-30
+version: "1.0.0"
+keywords:
+  - vardadieniai
+  - Lietuva
+  - kalendorius
+  - name days
+  - Lithuanian
+language: lt
