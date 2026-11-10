@@ -1,0 +1,17 @@
+pkgbase = python-vardadieniai
+	pkgdesc = Lithuanian name days (vardadieniai) calendar: Python library and CLI
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://dovanasuvardu.lt/vardadieniai/
+	arch = any
+	license = MIT
+	license = CC-BY-SA-4.0
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-wheel
+	depends = python
+	source = https://files.pythonhosted.org/packages/source/v/vardadieniai/vardadieniai-1.0.0.tar.gz
+	sha256sums = bb10bd9c02bcc3de233e8f18613d893f3ea3e92b0007da558dfec69a0a00eb41
+
+pkgname = python-vardadieniai

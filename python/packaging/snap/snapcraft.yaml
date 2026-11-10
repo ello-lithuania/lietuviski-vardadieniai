@@ -1,0 +1,26 @@
+name: vardadieniai
+base: core24
+version: '1.0.0'
+summary: Lithuanian name days (vardadieniai) calendar for the command line
+description: |
+  Lietuvos vardadienių kalendorius komandinei eilutei: šiandienos ir rytojaus
+  vardadieniai (Vilniaus laiku), vardai pagal datą, datos pagal vardą (diakritikai
+  nebūtini), visas mėnuo, JSON išvestis. Dependency-free; code is MIT, data is
+  CC BY-SA 4.0 (source: Lithuanian Wikipedia).
+  Full calendar for humans: https://dovanasuvardu.lt/vardadieniai/
+website: https://dovanasuvardu.lt/vardadieniai/
+source-code: https://github.com/ello-lithuania/lietuviski-vardadieniai
+issues: https://github.com/ello-lithuania/lietuviski-vardadieniai/issues
+contact: info@kokybiskasvetaine.lt
+license: MIT AND CC-BY-SA-4.0
+grade: stable
+confinement: strict
+
+apps:
+  vardadieniai:
+    command: bin/vardadieniai
+
+parts:
+  vardadieniai:
+    plugin: python
+    source: .

@@ -1,0 +1,25 @@
+# Maintainer: KokybiskaSvetaine.lt (Justas Arbatauskis) <info@kokybiskasvetaine.lt>
+pkgname=python-vardadieniai
+_name=vardadieniai
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Lithuanian name days (vardadieniai) calendar: Python library and CLI"
+arch=('any')
+url="https://dovanasuvardu.lt/vardadieniai/"
+license=('MIT' 'CC-BY-SA-4.0')
+depends=('python')
+makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
+source=("https://files.pythonhosted.org/packages/source/v/${_name}/${_name}-${pkgver}.tar.gz")
+sha256sums=('bb10bd9c02bcc3de233e8f18613d893f3ea3e92b0007da558dfec69a0a00eb41')
+
+build() {
+  cd "${_name}-${pkgver}"
+  python -m build --wheel --no-isolation
+}
+
+package() {
+  cd "${_name}-${pkgver}"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 DATA_LICENSE "$pkgdir/usr/share/licenses/$pkgname/DATA_LICENSE"
+}

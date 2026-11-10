@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vardadieniai"
+version = "1.0.0"
+description = "Lietuvos vardadienių kalendorius: šiandien, pagal datą, pagal vardą (Lithuanian name days)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT AND CC-BY-SA-4.0"
+license-files = ["LICENSE", "DATA_LICENSE"]
+authors = [{ name = "KokybiskaSvetaine.lt (Justas Arbatauskis)", email = "info@kokybiskasvetaine.lt" }]
+keywords = ["vardadieniai", "name days", "Lithuania", "Lithuanian", "calendar", "lietuva", "kalendorius"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: Lithuanian",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://dovanasuvardu.lt/vardadieniai/"
+Source = "https://github.com/ello-lithuania/lietuviski-vardadieniai"
+Issues = "https://github.com/ello-lithuania/lietuviski-vardadieniai/issues"
+
+[project.scripts]
+vardadieniai = "vardadieniai.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vardadieniai = ["data/*.json"]

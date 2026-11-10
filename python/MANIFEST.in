@@ -1,0 +1,4 @@
+include LICENSE DATA_LICENSE README.md
+recursive-include src/vardadieniai/data *.json
+recursive-include tests *.py
+recursive-include packaging *

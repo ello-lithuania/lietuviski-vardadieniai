@@ -1,0 +1,50 @@
+{% set name = "vardadieniai" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: bb10bd9c02bcc3de233e8f18613d893f3ea3e92b0007da558dfec69a0a00eb41
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  entry_points:
+    - vardadieniai = vardadieniai.cli:main
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+    - setuptools >=77
+  run:
+    - python >=3.9
+
+test:
+  imports:
+    - vardadieniai
+  commands:
+    - vardadieniai --help
+    - vardadieniai 11-09
+    - vardadieniai --vardas azuolas
+
+about:
+  home: https://dovanasuvardu.lt/vardadieniai/
+  dev_url: https://github.com/ello-lithuania/lietuviski-vardadieniai
+  doc_url: https://dovanasuvardu.lt/vardadieniai/
+  license: MIT AND CC-BY-SA-4.0
+  license_file:
+    - LICENSE
+    - DATA_LICENSE
+  summary: Lithuanian name days (vardadieniai) calendar - Python library and CLI
+  description: |
+    Lietuvos vardadienių kalendorius: šiandien, pagal datą, pagal vardą.
+    Code MIT, data CC BY-SA 4.0 (source: Lithuanian Wikipedia).
+
+extra:
+  recipe-maintainers:
+    - ello-lithuania

@@ -1,0 +1,17 @@
+Data licence: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Applies to the files in src/vardadieniai/data/ (vardadieniai.json, vardai.json).
+
+Attribution / Priskyrimas:
+  Source: Lithuanian Wikipedia (lt.wikipedia.org, day articles, section "Vardadieniai",
+  retrieved 2026-10-30), cross-checked with day.lt and tv3.lt.
+  Compiled by KokybiskaSvetaine.lt (Justas Arbatauskis) for dovanasuvardu.lt:
+  https://dovanasuvardu.lt/vardadieniai/
+  Dataset repository: https://github.com/ello-lithuania/lietuviski-vardadieniai
+
+If you reuse or adapt the data you must give appropriate credit, indicate changes,
+and distribute your contributions under the same licence (CC BY-SA 4.0).
+
+Duomenys: CC BY-SA 4.0. Šaltinis: lietuviškoji Vikipedija; sudarė dovanasuvardu.lt.
+Naudodami nurodykite: "Vikipedija / dovanasuvardu.lt (https://dovanasuvardu.lt/vardadieniai/)".
