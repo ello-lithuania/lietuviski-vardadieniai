@@ -1,0 +1,27 @@
+name: Snap build
+
+on:
+  push:
+    branches: [main]
+    paths: ["snap/**", "python/**", ".github/workflows/snap.yml"]
+  pull_request:
+    paths: ["snap/**", "python/**"]
+  workflow_dispatch:
+
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: snapcore/action-build@v1
+        id: build
+      - name: Install and run the snap
+        run: |
+          sudo snap install --dangerous "${{ steps.build.outputs.snap }}"
+          vardadieniai --help
+          vardadieniai
+          vardadieniai 12-24
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vardadieniai-snap
+          path: ${{ steps.build.outputs.snap }}
