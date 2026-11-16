@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>naujagimiu-vardai</id>
+    <version>__VERSION__</version>
+    <title>Naujagimiu vardai (popular baby names in Lithuania)</title>
+    <authors>KokybiskaSvetaine.lt</authors>
+    <owners>ello-lithuania</owners>
+    <projectUrl>https://krikstynudovana.lt/kriksto-vardai/</projectUrl>
+    <projectSourceUrl>https://github.com/ello-lithuania/lietuviski-vardadieniai</projectSourceUrl>
+    <packageSourceUrl>https://github.com/ello-lithuania/lietuviski-vardadieniai/tree/main/packaging/chocolatey/naujagimiu-vardai</packageSourceUrl>
+    <docsUrl>https://github.com/ello-lithuania/lietuviski-vardadieniai#readme</docsUrl>
+    <bugTrackerUrl>https://github.com/ello-lithuania/lietuviski-vardadieniai/issues</bugTrackerUrl>
+    <licenseUrl>https://github.com/ello-lithuania/lietuviski-vardadieniai/blob/main/naujagimiu-vardai/rust/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>lithuania lithuanian baby-names names statistics cli</tags>
+    <summary>Most popular newborn names in Lithuania (2024, Registry Centre open data) on the command line.</summary>
+    <description>Command line tool with the most popular newborn names in Lithuania (2024, VĮ Registrų centras open data).
+
+- `naujagimiu-vardai` – top 10 girls' and boys' names
+- `naujagimiu-vardai --top 20 --lytis berniukai` – top 20 boys' names
+- `naujagimiu-vardai --vardas lukne` – the rank of a name (diacritics optional)
+
+Baptism names with meanings and name days: https://krikstynudovana.lt/kriksto-vardai/
+
+Code MIT, data CC BY 4.0.</description>
+    <releaseNotes>https://github.com/ello-lithuania/lietuviski-vardadieniai/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

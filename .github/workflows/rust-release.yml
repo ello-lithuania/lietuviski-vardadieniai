@@ -1,0 +1,84 @@
+name: Rust release
+on:
+  push:
+    tags: ["rust-v*"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            ext: .exe
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            ext: ""
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            ext: ""
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup update stable && rustup default stable && rustup target add ${{ matrix.target }}
+        shell: bash
+      - name: Build vardadieniai
+        run: cargo build --release --manifest-path rust/Cargo.toml --target ${{ matrix.target }}
+      - name: Build naujagimiu-vardai
+        run: cargo build --release --manifest-path naujagimiu-vardai/rust/Cargo.toml --target ${{ matrix.target }}
+      - name: Archives
+        shell: bash
+        run: |
+          mkdir -p dist stage
+          b=vardadieniai; d=rust
+          mkdir -p "stage/$b"; cp "$d/target/${{ matrix.target }}/release/$b${{ matrix.ext }}" "stage/$b/"; cp "$d/README.md" "$d/LICENSE" "$d/DATA_LICENSE" "stage/$b/"
+          if [ "${{ matrix.ext }}" = ".exe" ]; then (cd "stage/$b" && 7z a -tzip "../../dist/$b-${{ matrix.target }}.zip" . >/dev/null); else tar -czf "dist/$b-${{ matrix.target }}.tar.gz" -C "stage/$b" .; fi
+          b=naujagimiu-vardai; d=naujagimiu-vardai/rust
+          mkdir -p "stage/$b"; cp "$d/target/${{ matrix.target }}/release/$b${{ matrix.ext }}" "stage/$b/"; cp "$d/README.md" "$d/LICENSE" "$d/DATA_LICENSE" "stage/$b/"
+          if [ "${{ matrix.ext }}" = ".exe" ]; then (cd "stage/$b" && 7z a -tzip "../../dist/$b-${{ matrix.target }}.zip" . >/dev/null); else tar -czf "dist/$b-${{ matrix.target }}.tar.gz" -C "stage/$b" .; fi
+      - name: Chocolatey packages
+        if: matrix.os == 'windows-latest'
+        shell: pwsh
+        run: |
+          $ver = "${{ github.ref_name }}" -replace '^rust-v', ''
+          if ($ver -notmatch '^\d') { $ver = "1.0.0" }
+          New-Item -ItemType Directory -Force chocobuild | Out-Null
+          $id = "vardadieniai"; $bin = "vardadieniai"; $dir = "rust"
+          $pk = "chocobuild\$id"; New-Item -ItemType Directory -Force "$pk\tools" | Out-Null
+          Copy-Item "$dir\target\x86_64-pc-windows-msvc\release\$bin.exe" "$pk\tools\"
+          Copy-Item "$dir\LICENSE" "$pk\tools\LICENSE.txt"
+          $sha = (Get-FileHash "$pk\tools\$bin.exe" -Algorithm SHA256).Hash
+          (Get-Content "packaging\chocolatey\$id\VERIFICATION.txt" -Raw).Replace("__VERSION__", $ver).Replace("__SHA256__", $sha) | Set-Content "$pk\tools\VERIFICATION.txt" -Encoding utf8
+          (Get-Content "packaging\chocolatey\$id\$id.nuspec" -Raw).Replace("__VERSION__", $ver) | Set-Content "$pk\$id.nuspec" -Encoding utf8
+          choco pack "$pk\$id.nuspec" --outputdirectory dist
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          $id = "naujagimiu-vardai"; $bin = "naujagimiu-vardai"; $dir = "naujagimiu-vardai/rust"
+          $pk = "chocobuild\$id"; New-Item -ItemType Directory -Force "$pk\tools" | Out-Null
+          Copy-Item "$dir\target\x86_64-pc-windows-msvc\release\$bin.exe" "$pk\tools\"
+          Copy-Item "$dir\LICENSE" "$pk\tools\LICENSE.txt"
+          $sha = (Get-FileHash "$pk\tools\$bin.exe" -Algorithm SHA256).Hash
+          (Get-Content "packaging\chocolatey\$id\VERIFICATION.txt" -Raw).Replace("__VERSION__", $ver).Replace("__SHA256__", $sha) | Set-Content "$pk\tools\VERIFICATION.txt" -Encoding utf8
+          (Get-Content "packaging\chocolatey\$id\$id.nuspec" -Raw).Replace("__VERSION__", $ver) | Set-Content "$pk\$id.nuspec" -Encoding utf8
+          choco pack "$pk\$id.nuspec" --outputdirectory dist
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ matrix.target }}
+          path: dist/*
+  release:
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/rust-v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Rust CLI ${{ github.ref_name }}
+          body: Command line binaries for Windows, Linux and macOS (Apple Silicon), and Chocolatey packages. Source and docs in this repository.
+          files: dist/*
