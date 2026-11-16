@@ -1,0 +1,284 @@
+{
+ "metai": 2024,
+ "saltinis": "VĮ Registrų centras, atviri duomenys (data.gov.lt)",
+ "licencija": "CC BY 4.0",
+ "mergaites": [
+  {
+   "vieta": 1,
+   "vardas": "Sofija",
+   "vaiku": 224
+  },
+  {
+   "vieta": 2,
+   "vardas": "Amelija",
+   "vaiku": 223
+  },
+  {
+   "vieta": 3,
+   "vardas": "Emilija",
+   "vaiku": 183
+  },
+  {
+   "vieta": 4,
+   "vardas": "Luknė",
+   "vaiku": 169
+  },
+  {
+   "vieta": 5,
+   "vardas": "Lėja",
+   "vaiku": 169
+  },
+  {
+   "vieta": 6,
+   "vardas": "Liepa",
+   "vaiku": 160
+  },
+  {
+   "vieta": 7,
+   "vardas": "Ema",
+   "vaiku": 153
+  },
+  {
+   "vieta": 8,
+   "vardas": "Olivija",
+   "vaiku": 152
+  },
+  {
+   "vieta": 9,
+   "vardas": "Adelė",
+   "vaiku": 150
+  },
+  {
+   "vieta": 10,
+   "vardas": "Gabija",
+   "vaiku": 142
+  },
+  {
+   "vieta": 11,
+   "vardas": "Izabelė",
+   "vaiku": 142
+  },
+  {
+   "vieta": 12,
+   "vardas": "Patricija",
+   "vaiku": 138
+  },
+  {
+   "vieta": 13,
+   "vardas": "Kamilė",
+   "vaiku": 118
+  },
+  {
+   "vieta": 14,
+   "vardas": "Elija",
+   "vaiku": 92
+  },
+  {
+   "vieta": 15,
+   "vardas": "Saulė",
+   "vaiku": 88
+  },
+  {
+   "vieta": 16,
+   "vardas": "Ugnė",
+   "vaiku": 88
+  },
+  {
+   "vieta": 17,
+   "vardas": "Barbora",
+   "vaiku": 62
+  },
+  {
+   "vieta": 18,
+   "vardas": "Austėja",
+   "vaiku": 57
+  },
+  {
+   "vieta": 19,
+   "vardas": "Elena",
+   "vaiku": 57
+  },
+  {
+   "vieta": 20,
+   "vardas": "Gabrielė",
+   "vaiku": 53
+  },
+  {
+   "vieta": 21,
+   "vardas": "Iglė",
+   "vaiku": 52
+  },
+  {
+   "vieta": 22,
+   "vardas": "Milana",
+   "vaiku": 38
+  },
+  {
+   "vieta": 23,
+   "vardas": "Atėnė",
+   "vaiku": 30
+  },
+  {
+   "vieta": 24,
+   "vardas": "Vakarė",
+   "vaiku": 30
+  },
+  {
+   "vieta": 25,
+   "vardas": "Matėja",
+   "vaiku": 28
+  },
+  {
+   "vieta": 26,
+   "vardas": "Rugilė",
+   "vaiku": 28
+  },
+  {
+   "vieta": 27,
+   "vardas": "Eva",
+   "vaiku": 27
+  },
+  {
+   "vieta": 28,
+   "vardas": "Urtė",
+   "vaiku": 27
+  },
+  {
+   "vieta": 29,
+   "vardas": "Viltė",
+   "vaiku": 27
+  },
+  {
+   "vieta": 30,
+   "vardas": "Luka",
+   "vaiku": 25
+  }
+ ],
+ "berniukai": [
+  {
+   "vieta": 1,
+   "vardas": "Markas",
+   "vaiku": 307
+  },
+  {
+   "vieta": 2,
+   "vardas": "Benas",
+   "vaiku": 301
+  },
+  {
+   "vieta": 3,
+   "vardas": "Jonas",
+   "vaiku": 245
+  },
+  {
+   "vieta": 4,
+   "vardas": "Lukas",
+   "vaiku": 228
+  },
+  {
+   "vieta": 5,
+   "vardas": "Motiejus",
+   "vaiku": 223
+  },
+  {
+   "vieta": 6,
+   "vardas": "Matas",
+   "vaiku": 218
+  },
+  {
+   "vieta": 7,
+   "vardas": "Nojus",
+   "vaiku": 207
+  },
+  {
+   "vieta": 8,
+   "vardas": "Jokūbas",
+   "vaiku": 199
+  },
+  {
+   "vieta": 9,
+   "vardas": "Leonas",
+   "vaiku": 186
+  },
+  {
+   "vieta": 10,
+   "vardas": "Dominykas",
+   "vaiku": 183
+  },
+  {
+   "vieta": 11,
+   "vardas": "Herkus",
+   "vaiku": 183
+  },
+  {
+   "vieta": 12,
+   "vardas": "Kajus",
+   "vaiku": 173
+  },
+  {
+   "vieta": 13,
+   "vardas": "Ąžuolas",
+   "vaiku": 172
+  },
+  {
+   "vieta": 14,
+   "vardas": "Adas",
+   "vaiku": 162
+  },
+  {
+   "vieta": 15,
+   "vardas": "Adomas",
+   "vaiku": 156
+  },
+  {
+   "vieta": 16,
+   "vardas": "Emilis",
+   "vaiku": 154
+  },
+  {
+   "vieta": 17,
+   "vardas": "Domas",
+   "vaiku": 152
+  },
+  {
+   "vieta": 18,
+   "vardas": "Arijus",
+   "vaiku": 103
+  },
+  {
+   "vieta": 19,
+   "vardas": "Aronas",
+   "vaiku": 72
+  },
+  {
+   "vieta": 20,
+   "vardas": "Joris",
+   "vaiku": 65
+  },
+  {
+   "vieta": 21,
+   "vardas": "Ajus",
+   "vaiku": 64
+  },
+  {
+   "vieta": 22,
+   "vardas": "Augustas",
+   "vaiku": 42
+  },
+  {
+   "vieta": 23,
+   "vardas": "Leonardas",
+   "vaiku": 35
+  },
+  {
+   "vieta": 24,
+   "vardas": "Gabrielius",
+   "vaiku": 34
+  },
+  {
+   "vieta": 25,
+   "vardas": "Rokas",
+   "vaiku": 34
+  }
+ ]
+}

@@ -53,3 +53,7 @@ Duomenys platinami pagal [CC BY-SA 4.0](https://creativecommons.org/licenses/by-
 ---
 
 *Lithuanian name days (vardadieniai) for all 366 days as JSON/CSV. Source: Lithuanian Wikipedia, cross-checked. License: CC BY-SA 4.0. Name search and printable calendar: [dovanasuvardu.lt/vardadieniai](https://dovanasuvardu.lt/vardadieniai/).*
+
+## Naujagimių vardai
+
+`naujagimiu-vardai/` – populiariausi 2024 m. naujagimių vardai (VĮ Registrų centras, CC BY 4.0): biblioteka ir komandinė eilutė `naujagimiu-vardai`. Krikšto vardai ir jų reikšmės – [krikstynudovana.lt](https://krikstynudovana.lt/kriksto-vardai/).
