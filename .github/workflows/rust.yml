@@ -1,0 +1,19 @@
+name: Rust
+on:
+  push:
+    paths: ["rust/**", "naujagimiu-vardai/rust/**", ".github/workflows/rust.yml"]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        crate: [rust, naujagimiu-vardai/rust]
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup update stable && rustup default stable
+      - run: cargo test --manifest-path ${{ matrix.crate }}/Cargo.toml
+      - run: cargo run -q --manifest-path ${{ matrix.crate }}/Cargo.toml -- --help
+      - run: cargo run -q --manifest-path ${{ matrix.crate }}/Cargo.toml
+      - run: cargo package --allow-dirty --manifest-path ${{ matrix.crate }}/Cargo.toml

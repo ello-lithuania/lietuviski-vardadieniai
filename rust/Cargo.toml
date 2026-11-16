@@ -1,0 +1,17 @@
+[package]
+name = "vardadieniai"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.65"
+description = "Lithuanian name days (vardadieniai): names by date, dates by name and today's names in Europe/Vilnius time. Library and CLI, no dependencies."
+homepage = "https://dovanasuvardu.lt/vardadieniai/"
+repository = "https://github.com/ello-lithuania/lietuviski-vardadieniai"
+documentation = "https://docs.rs/vardadieniai"
+license = "MIT AND CC-BY-SA-4.0"
+readme = "README.md"
+keywords = ["lithuania", "lithuanian", "name-days", "calendar", "vardadieniai"]
+categories = ["date-and-time", "command-line-utilities", "localization"]
+authors = ["KokybiskaSvetaine.lt <info@kokybiskasvetaine.lt>"]
+include = ["src/**/*.rs", "Cargo.toml", "README.md", "LICENSE", "DATA_LICENSE"]
+
+[dependencies]

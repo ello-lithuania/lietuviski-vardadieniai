@@ -1,0 +1,17 @@
+[package]
+name = "naujagimiu-vardai"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.65"
+description = "Most popular newborn names in Lithuania (2024, Registry Centre open data): girls and boys with ranks and counts. Library and CLI, no dependencies."
+homepage = "https://krikstynudovana.lt/kriksto-vardai/"
+repository = "https://github.com/ello-lithuania/lietuviski-vardadieniai"
+documentation = "https://docs.rs/naujagimiu-vardai"
+license = "MIT AND CC-BY-4.0"
+readme = "README.md"
+keywords = ["lithuania", "lithuanian", "baby-names", "names", "statistics"]
+categories = ["command-line-utilities", "localization", "science"]
+authors = ["KokybiskaSvetaine.lt <info@kokybiskasvetaine.lt>"]
+include = ["src/**/*.rs", "Cargo.toml", "README.md", "LICENSE", "DATA_LICENSE"]
+
+[dependencies]
