@@ -34,6 +34,21 @@ const d = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Vilnius", month: 
 console.log("Šiandien vardadienius švenčia:", V[d].join(", "));
 ```
 
+## Komandinė eilutė ir paketai
+
+- **Rust**: [`vardadieniai`](https://crates.io/crates/vardadieniai) ir [`naujagimiu-vardai`](https://crates.io/crates/naujagimiu-vardai) (`cargo install vardadieniai`), dokumentacija – [docs.rs](https://docs.rs/vardadieniai).
+- **Python**: `python/` ir `naujagimiu-vardai/` (pip install iš šaltinio).
+- **D**: [`vardadieniai`](https://code.dlang.org/packages/vardadieniai) (DUB).
+- **Paruoštos programos** Windows, Linux ir macOS – [GitHub Releases](https://github.com/ello-lithuania/lietuviski-vardadieniai/releases/tag/rust-v1.0.0).
+
+```sh
+vardadieniai                  # šiandien ir rytoj
+vardadieniai --vardas azuolas # kada švenčia Ąžuolas
+naujagimiu-vardai --top 10    # populiariausi 2024 m. vardai
+```
+
+Kalendorius su sveikinimais žmonėms – [dovanasuvardu.lt/vardadieniai](https://dovanasuvardu.lt/vardadieniai/).
+
 ## Šaltiniai
 
 Pagrindinis šaltinis – lietuviškoji Vikipedija (dienų straipsnių skyrius „Vardadieniai“, 2026-10-30), sutikrinta su day.lt ir tv3.lt kalendoriais. Dėl retų vardų kalendoriai kartais skiriasi – laikomasi Vikipedijos sąrašo.
